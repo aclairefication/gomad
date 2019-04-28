@@ -97,7 +97,22 @@ func callsententia() {
 
 }
 
+func generateSentence() string {
+	fmt.Println("Calling generateSentence")
+	//Using sententia to generate Mad Libs with adjectives & nouns
+	sentence, err := sententia.Make("Aw yis, {{ adjective }} {{ nouns }}.")
+	if err != nil {
+		panic(err)
+	}
+	return sentence
+}
+
 func main() {
+	//Functions with no return
 	callwordblanks()
 	callsententia()
+
+	//Function with return
+	madlib := generateSentence()
+	fmt.Println("madlib sentence is " + madlib)
 }
