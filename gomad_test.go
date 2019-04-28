@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -55,11 +54,11 @@ func TestGeneratedSentenceContainsFourWords(t *testing.T) {
 func TestFillSentence(t *testing.T) {
 	sentencePattern := "Aw yis, {{ adjective }} {{ nouns }}."
 	sentencePrefix := strings.Split(sentencePattern, "{{")[0]
-	fmt.Println("Prefix is '" + sentencePrefix + "'")
+	t.Log("Prefix is '" + sentencePrefix + "'")
 	patternsInString := strings.Split(sentencePattern, "}}")
 	numPatterns := len(patternsInString)
 	sentenceSuffix := strings.Split(sentencePattern, "}}")[numPatterns-1]
-	fmt.Println("Suffix is '" + sentenceSuffix + "'")
+	t.Log("Suffix is '" + sentenceSuffix + "'")
 
 	filledSentence := fillSentence(sentencePattern)
 
@@ -82,7 +81,7 @@ func TestFillManySentences(t *testing.T) {
 
 	for _, thisSentence := range sentencePatterns {
 		filledSentence := fillSentence(thisSentence.pattern)
-		fmt.Println("Resulting sentence: " + filledSentence)
+		t.Log("Resulting sentence: " + filledSentence)
 
 		if !strings.HasPrefix(filledSentence, thisSentence.prefix) && !strings.HasSuffix(filledSentence, thisSentence.suffix) {
 			t.Error("generateSentence was incorrect. Should have started with '" + thisSentence.prefix + "' and end with '" + thisSentence.suffix + "' but was '" + filledSentence + "'")
