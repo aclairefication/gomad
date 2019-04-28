@@ -24,7 +24,8 @@ func callwordblanks() {
 	// wordblanksurl := "https://www.wordblanks.com/scripts/wb_ajax.php?token=diZo19~pw9wzzTmjssdNBAcJ2SQECyG8Ip.LwefrOnM-&method=getRandomWordSet&posArray%5B%5D=noun&posArray%5B%5D=verb_present&posArray%5B%5D=verb&posArray%5B%5D=adjective"
 
 	wordblanksapibase := "https://www.wordblanks.com/scripts/wb_ajax.php?"
-	token := "diZo19~pw9wzzTmjssdNBAcJ2SQECyG8Ip.LwefrOnM-"
+	token := "2UdLWTsozqnPNltOB4n2hzGkGKd6Ome4"
+	//Expired	token := "diZo19~pw9wzzTmjssdNBAcJ2SQECyG8Ip.LwefrOnM-"
 	//Getting words
 	method := "getRandomWordSet"
 
@@ -85,17 +86,17 @@ func callwordblanks() {
 
 }
 
-func callsententia() {
-	fmt.Println("Calling Sententia")
+// func callsententia() {
+// 	fmt.Println("Calling Sententia")
 
-	//Using sententia to generate Mad Libs with adjectives & nouns
-	sentence, err := sententia.Make("Aw yis, {{ adjective }} {{ nouns }}.")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(sentence)
+// 	//Using sententia to generate Mad Libs with adjectives & nouns
+// 	sentence, err := sententia.Make("Aw yis, {{ adjective }} {{ nouns }}.")
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// 	fmt.Println(sentence)
 
-}
+// }
 
 func generateSentence() string {
 	fmt.Println("Calling generateSentence")
@@ -108,9 +109,9 @@ func generateSentence() string {
 }
 
 func main() {
-	//Functions with no return
+	//Function with no return
 	callwordblanks()
-	callsententia()
+	// callsententia()
 
 	//Function with return
 	madlib := generateSentence()

@@ -9,7 +9,7 @@ import (
 func TestGeneratedSentenceIsNotEmpty(t *testing.T) {
 	sentence := generateSentence()
 	if sentence == "" {
-		t.Errorf("generateSentence was incorrect, got empty string but want not empty string")
+		t.Error("generateSentence was incorrect, got empty string but want not empty string")
 	}
 }
 
