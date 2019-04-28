@@ -68,3 +68,25 @@ func TestFillSentence(t *testing.T) {
 	}
 
 }
+
+func TestFillManySentences(t *testing.T) {
+	var sentencePatterns = []struct {
+		pattern string
+		prefix  string
+		suffix  string
+	}{
+		{"Aw yis, {{ adjective }} {{ nouns }}.", "Aw yis, ", "."},
+		{"Hark! {{ adjective }} {{ nouns }}!", "Hark! ", "!"},
+		{"{{ adjective }} {{ nouns }} are at the door?", "", " are at the door?"},
+	}
+
+	for _, thisSentence := range sentencePatterns {
+		filledSentence := fillSentence(thisSentence.pattern)
+		fmt.Println("Resulting sentence: " + filledSentence)
+
+		if !strings.HasPrefix(filledSentence, thisSentence.prefix) && !strings.HasSuffix(filledSentence, thisSentence.suffix) {
+			t.Error("generateSentence was incorrect. Should have started with '" + thisSentence.prefix + "' and end with '" + thisSentence.suffix + "' but was '" + filledSentence + "'")
+		}
+	}
+
+}
