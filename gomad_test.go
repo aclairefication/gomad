@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 	"testing"
 )
@@ -49,4 +50,21 @@ func TestGeneratedSentenceContainsFourWords(t *testing.T) {
 	if spaceCount != 3 {
 		t.Error("generateSentence was incorrect. Should have contained 3 spaces (i.e. 4 words) but was '" + sentence + "'")
 	}
+}
+
+func TestFillSentence(t *testing.T) {
+	sentencePattern := "Aw yis, {{ adjective }} {{ nouns }}."
+	sentencePrefix := strings.Split(sentencePattern, "{{")[0]
+	fmt.Println("Prefix is '" + sentencePrefix + "'")
+	patternsInString := strings.Split(sentencePattern, "}}")
+	numPatterns := len(patternsInString)
+	sentenceSuffix := strings.Split(sentencePattern, "}}")[numPatterns-1]
+	fmt.Println("Suffix is '" + sentenceSuffix + "'")
+
+	filledSentence := fillSentence(sentencePattern)
+
+	if !strings.HasPrefix(filledSentence, sentencePrefix) && !strings.HasSuffix(filledSentence, sentenceSuffix) {
+		t.Error("generateSentence was incorrect. Should have started with '" + sentencePrefix + "' and end with '" + sentenceSuffix + "' but was '" + filledSentence + "'")
+	}
+
 }

@@ -99,7 +99,7 @@ func callwordblanks() {
 // }
 
 func generateSentence() string {
-	fmt.Println("Calling generateSentence")
+	// fmt.Println("Calling generateSentence")
 	//Using sententia to generate Mad Libs with adjectives & nouns
 	sentence, err := sententia.Make("Aw yis, {{ adjective }} {{ nouns }}.")
 	if err != nil {
@@ -108,12 +108,26 @@ func generateSentence() string {
 	return sentence
 }
 
+func fillSentence(sentenceWithBlanks string) string {
+	fmt.Println("Calling fillSentence with '" + sentenceWithBlanks + "'")
+	sentence, err := sententia.Make(sentenceWithBlanks)
+	if err != nil {
+		panic(err)
+	}
+	return sentence
+}
+
 func main() {
-	//Function with no return
+	//Function with hard-coded string pattern and no return
 	callwordblanks()
 	// callsententia()
 
-	//Function with return
+	//Function with hard-coded string pattern and result return
 	madlib := generateSentence()
 	fmt.Println("madlib sentence is " + madlib)
+
+	//Function with dynamic input and result return
+	sentenceToFill := "Aw yis, {{ adjective }} {{ nouns }}."
+	completedSentence := fillSentence(sentenceToFill)
+	fmt.Println("another madlib sentence: " + completedSentence)
 }
