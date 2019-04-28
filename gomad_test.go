@@ -51,6 +51,7 @@ func TestGeneratedSentenceContainsFourWords(t *testing.T) {
 	}
 }
 
+//Generate a sentence by passing in a pattern
 func TestFillSentence(t *testing.T) {
 	sentencePattern := "Aw yis, {{ adjective }} {{ nouns }}."
 	sentencePrefix := strings.Split(sentencePattern, "{{")[0]
@@ -68,15 +69,18 @@ func TestFillSentence(t *testing.T) {
 
 }
 
+//Generate sentences by passing in many patterns
 func TestFillManySentences(t *testing.T) {
 	var sentencePatterns = []struct {
 		pattern string
 		prefix  string
 		suffix  string
 	}{
-		{"Aw yis, {{ adjective }} {{ nouns }}.", "Aw yis, ", "."},
-		{"Hark! {{ adjective }} {{ nouns }}!", "Hark! ", "!"},
-		{"{{ adjective }} {{ nouns }} are at the door?", "", " are at the door?"},
+		{"Aw yis, {{ adjective }} {{ nouns }}.", "Aw yis, ", "."},                                                             //original sentence template
+		{"Hark! {{ adjective }} {{ nouns }}!", "Hark! ", "!"},                                                                 //different prefix & suffix
+		{"{{ adjective }} {{ nouns }} are at the door?", "", " are at the door?"},                                             //no prefix
+		{"Oh look, {{ an adjective }} {{ noun }}!", "Oh look, ", "!"},                                                         //uses an article
+		{"Once I had {{ an adjective }} {{ noun }} full of {{ nouns }} but they flew into {{ a noun }}.", "Once I had ", "."}, //Singular & plural
 	}
 
 	for _, thisSentence := range sentencePatterns {
@@ -89,3 +93,24 @@ func TestFillManySentences(t *testing.T) {
 	}
 
 }
+
+// Generate sentences by composing sententia functions
+// func TestFillSententiaSentencesWithActions(t *testing.T) {
+// 	var sentencePatterns = []struct {
+// 		pattern string
+// 		prefix  string
+// 		suffix  string
+// 	}{
+// 		{"She wrote a book called '{{ capitalize (an adjective) }} {{ capitalize noun }}'", "She wrote a book called '", ""},
+// 	}
+
+// 	for _, thisSentence := range sentencePatterns {
+// 		filledSentence := fillSentence(thisSentence.pattern)
+// 		t.Log("Resulting sentence: " + filledSentence)
+
+// 		if !strings.HasPrefix(filledSentence, thisSentence.prefix) && !strings.HasSuffix(filledSentence, thisSentence.suffix) {
+// 			t.Error("generateSentence was incorrect. Should have started with '" + thisSentence.prefix + "' and end with '" + thisSentence.suffix + "' but was '" + filledSentence + "'")
+// 		}
+// 	}
+
+// }
