@@ -1,4 +1,5 @@
-package main
+// +build unit
+package main_test
 
 import (
 	"fmt"
