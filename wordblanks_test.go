@@ -22,14 +22,18 @@ import (
 	fmt.Println("Verbs = ", record.Verbs)
 	fmt.Println("Adjectives = ", record.Adjectives)
 */
+
+//Modeled after https://tutorialedge.net/golang/improving-your-tests-with-testify-go/#a-mocking-example
 func TestHttpGetRequestForWordBlanks(t *testing.T) {
+	token := "2UdLWTsozqnPNltOB4n2h6X8nf7lAH3m"
+
 	sampleNouns := "[\"mission\",\"anchor\",\"yogurt\",\"amusement park\"]"
 	samplePresentVerbs := "[\"inspiring\",\"wobbling\",\"mailing\"]"
 	sampleVerbs := "[\"crack\",\"breathe\",\"climb\",\"sip\",\"make\"]"
 	sampleAdjectives := "[\"vociferous\",\"chatty\",\"rigorous\",\"scraggly\",\"strategic\",\"hurried\"]"
 	sampleResponse := "{\"noun\":[" + sampleNouns + ", \"verb_present\":[" + samplePresentVerbs + ", \"verb\":" + sampleVerbs + ", \"adjective\":" + sampleAdjectives + "}"
 
-	targetUrl := "https://www.wordblanks.com/scripts/wb_ajax.php?token=2UdLWTsozqnPNltOB4n2hzGkGKd6Ome4&method=getRandomWordSet&posArray%5B%5D=noun&posArray%5B%5D=verb_present&posArray%5B%5D=verb&posArray%5B%5D=adjective"
+	targetUrl := "https://www.wordblanks.com/scripts/wb_ajax.php?token=" + token + "&method=getRandomWordSet&posArray%5B%5D=noun&posArray%5B%5D=verb_present&posArray%5B%5D=verb&posArray%5B%5D=adjective"
 
 	handler := func(writer http.ResponseWriter, request *http.Request) {
 		io.WriteString(writer, sampleResponse)
