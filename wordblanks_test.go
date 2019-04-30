@@ -23,7 +23,7 @@ import (
 	fmt.Println("Adjectives = ", record.Adjectives)
 */
 
-//Modeled after https://tutorialedge.net/golang/improving-your-tests-with-testify-go/#a-mocking-example
+//Modeled after https://tutorialedge.net/golang/advanced-go-testing-tutorial/#mocking-http-requests
 func TestHttpGetRequestForWordBlanks(t *testing.T) {
 	token := "2UdLWTsozqnPNltOB4n2h6X8nf7lAH3m"
 
