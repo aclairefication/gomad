@@ -1,6 +1,6 @@
 [![Golang Version](https://img.shields.io/badge/go-1.21.1-00ADD8.svg?style=plastic)](http://golang.com)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aclairefication/gomad?style=plastic)](https://goreportcard.com/report/github.com/aclairefication/gomad)
-
+[![Apache 2 license](https://img.shields.io/badge/License-Apache2-blue.svg)](LICENSE)
 
 Go Mad! is a project explaining the different types of contract testing
 
@@ -39,3 +39,10 @@ You can decide to support only those use cases that you consider valuable.
 You're already writing the application code - and hopefully the other test automation! - so adding one more type of test automation is not a heavy burden.
 
 Check out the provider-driven branch for more details!
+
+### Usage
+
+To run application code
+```
+go run gomad.go wordblanks.go
+```
