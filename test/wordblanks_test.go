@@ -13,15 +13,15 @@ import (
 
 //HTTP request to wordblanks
 /*
-        Nouns        []string `json:"noun"`
-        PresentVerbs []string `json:"verb_present"`
-        Verbs        []string `json:"verb"`
-        Adjectives   []string `json:"adjective"`
+   Nouns        []string `json:"noun"`
+   PresentVerbs []string `json:"verb_present"`
+   Verbs        []string `json:"verb"`
+   Adjectives   []string `json:"adjective"`
 
-        fmt.Println("Nouns list = ", record.Nouns)
-        fmt.Println("Present tense verbs = ", record.PresentVerbs)
-        fmt.Println("Verbs = ", record.Verbs)
-        fmt.Println("Adjectives = ", record.Adjectives)
+   fmt.Println("Nouns list = ", record.Nouns)
+   fmt.Println("Present tense verbs = ", record.PresentVerbs)
+   fmt.Println("Verbs = ", record.Verbs)
+   fmt.Println("Adjectives = ", record.Adjectives)
 */
 
 //Modeled after https://tutorialedge.net/golang/advanced-go-testing-tutorial/#mocking-http-requests
