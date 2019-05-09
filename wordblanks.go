@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-type ReturnedWords struct {
+type returnedWords struct {
 	Nouns        []string `json:"noun"`
 	PresentVerbs []string `json:"verb_present"`
 	Verbs        []string `json:"verb"`
@@ -67,7 +67,7 @@ func callWordBlanks() {
 
 	wordBlanksURL := buildwordBlanksURL()
 
-	var madLibWords ReturnedWords
+	var madLibWords returnedWords
 
 	request := buildRequest("GET", wordBlanksURL)
 
