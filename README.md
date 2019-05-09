@@ -42,7 +42,7 @@ Check out the provider-driven branch for more details!
 
 ### Usage
 
-To run application code
+To run against MadLib-like APIs
 ```
 go run gomad.go wordblanks.go
 ```
