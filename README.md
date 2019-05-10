@@ -25,7 +25,7 @@ To be sure the provider continues to answer in a predictable format, the consume
 What makes consumer-driven desirable?
 Like test-driven development (TDD), Consumer-Driven Contract Testing (CDCT) would allow writing only the code necessary for a particular use case of an application.
 
-Check out the consumer-driven branch for more details!
+Check out the consumer-driven folder for more details!
 
 ### Provider-Driven
 
@@ -38,7 +38,7 @@ You know you have a provider team, even if it's just you writing a solo project.
 You can decide to support only those use cases that you consider valuable.
 You're already writing the application code - and hopefully the other test automation! - so adding one more type of test automation is not a heavy burden.
 
-Check out the provider-driven branch for more details!
+Check out the provider-driven folder for more details!
 
 ### Usage
 
