@@ -1,6 +1,6 @@
 // +build unit
 
-package main_test
+package main
 
 import (
         "fmt"
