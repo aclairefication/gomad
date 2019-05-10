@@ -1,3 +1,5 @@
+<img src="./doc/GoMad-Logo.jpg" width="250">
+
 [![Golang Version](https://img.shields.io/badge/go-1.21.1-00ADD8.svg?style=plastic)](http://golang.com)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aclairefication/gomad?style=plastic)](https://goreportcard.com/report/github.com/aclairefication/gomad)
 [![Apache 2 license](https://img.shields.io/badge/License-Apache2-blue.svg)](LICENSE)
