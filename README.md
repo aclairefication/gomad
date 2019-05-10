@@ -2,7 +2,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/aclairefication/gomad?style=plastic)](https://goreportcard.com/report/github.com/aclairefication/gomad)
 [![Apache 2 license](https://img.shields.io/badge/License-Apache2-blue.svg)](LICENSE)
 
-Go Mad! is a project explaining the different types of contract testing
+Go Mad! is a project explaining the different types of contract testing.
 
 When you have multiple applications involved in a system, the interactions can be described as
 * a consumer requesting (probably with parameters) from
