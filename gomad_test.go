@@ -1,5 +1,4 @@
 // +build unit
-
 package main
 
 import (
@@ -101,21 +100,21 @@ func TestFillManySentences(t *testing.T) {
 
 // Generate sentences by composing sententia functions
 // func TestFillSententiaSentencesWithActions(t *testing.T) {
-//      var sentencePatterns = []struct {
-//              pattern string
-//              prefix  string
-//              suffix  string
-//      }{
-//              {"She wrote a book called '{{ capitalize (an adjective) }} {{ capitalize noun }}'", "She wrote a book called '", ""},
-//      }
+// 	var sentencePatterns = []struct {
+// 		pattern string
+// 		prefix  string
+// 		suffix  string
+// 	}{
+// 		{"She wrote a book called '{{ capitalize (an adjective) }} {{ capitalize noun }}'", "She wrote a book called '", ""},
+// 	}
 
-//      for _, thisSentence := range sentencePatterns {
-//              filledSentence := fillSentence(thisSentence.pattern)
-//              t.Log("Resulting sentence: " + filledSentence)
+// 	for _, thisSentence := range sentencePatterns {
+// 		filledSentence := fillSentence(thisSentence.pattern)
+// 		t.Log("Resulting sentence: " + filledSentence)
 
-//              if !strings.HasPrefix(filledSentence, thisSentence.prefix) && !strings.HasSuffix(filledSentence, thisSentence.suffix) {
-//                      t.Error("generateSentence was incorrect. Should have started with '" + thisSentence.prefix + "' and end with '" + thisSentence.suffix + "' but was '" + filledSentence + "'")
-//              }
-//      }
+// 		if !strings.HasPrefix(filledSentence, thisSentence.prefix) && !strings.HasSuffix(filledSentence, thisSentence.suffix) {
+// 			t.Error("generateSentence was incorrect. Should have started with '" + thisSentence.prefix + "' and end with '" + thisSentence.suffix + "' but was '" + filledSentence + "'")
+// 		}
+// 	}
 
 // }
