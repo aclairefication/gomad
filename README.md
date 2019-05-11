@@ -1,4 +1,4 @@
-<img src="./doc/GoMad-Logo.jpg" width="250">
+<img src="./doc/GoMad-Logo.jpg" width="250" title="design based on original Gopher by Renee French and Mad Libs mascot Phil">
 
 [![Golang Version](https://img.shields.io/badge/go-1.21.1-00ADD8.svg?style=plastic)](http://golang.com)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aclairefication/gomad?style=plastic)](https://goreportcard.com/report/github.com/aclairefication/gomad)
