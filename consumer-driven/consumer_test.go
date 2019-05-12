@@ -98,6 +98,7 @@ func TestConsumer(t *testing.T) {
     WithRequest(dsl.Request{
       Method:  "GET",
       Path:    "/words",
+      Headers: map[string]string{"Content-Type": "application/json"},
       Body: map[string]int{
         "adjective": 1,
         "noun": 1,
@@ -106,6 +107,7 @@ func TestConsumer(t *testing.T) {
     }).
     WillRespondWith(dsl.Response{
       Status:  200,
+      Headers: map[string]string{"Content-Type": "application/json"},
       Body:    dsl.Match(&ResponseWords{}),
     })
 
