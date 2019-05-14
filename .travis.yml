@@ -1,0 +1,19 @@
+language: go
+
+go:
+  - 1.12.x
+  - master
+
+env:
+  global:
+    - GO111MODULE=on
+
+before_script:
+  - golint  ./...
+  - go vet ./...
+
+script:
+  - go test -v ./...
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)  
