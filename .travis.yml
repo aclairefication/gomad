@@ -8,10 +8,6 @@ env:
   global:
     - GO111MODULE=on
 
-before_script:
-  - golint  ./...
-  - go vet ./...
-
 script:
   - go test -v ./...
 
