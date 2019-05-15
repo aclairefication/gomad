@@ -5,6 +5,7 @@
 [![Apache 2 license](https://img.shields.io/badge/License-Apache2-blue.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/aclairefication/gomad.svg?branch=master)](https://travis-ci.org/aclairefication/gomad)
 [![codecov](https://codecov.io/gh/aclairefication/gomad/branch/master/graph/badge.svg)](https://codecov.io/gh/aclairefication/gomad)
+[![](https://codescene.io/projects/4861/status.svg) Latest successful job](https://codescene.io/projects/4861/jobs/latest-successful/results)
 
 Go Mad! is a project explaining the different types of contract testing.
 
