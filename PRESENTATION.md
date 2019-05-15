@@ -12,10 +12,10 @@ Provider teams building API products collaborate with the consumer teams who are
 Join [Claire](http://aclairefication.com/) for an interactive exploration of contract testing as a feedback technique. Enable greater focus on the [individuals and interactions](http://agilemanifesto.org/principles.html). Make responding to the changes of this MAD world easier!
 
 ### Learning Outcomes:
-  - Relate familiar communication patterns to this new technology practice
-  - Identify the problem that contract testing addresses
-  - Understand different kinds of contract testing
-  - Discuss different implementations of solutions
-  - See a demo in code
-  - Be able to explain the value of the practice on the first day back at the office
-  - Deploy API products more easily!
+- Relate familiar communication patterns to this new technology practice
+- Identify the problem that contract testing addresses
+- Understand different kinds of contract testing
+- Discuss different implementations of solutions
+- See a demo in code
+- Be able to explain the value of the practice on the first day back at the office
+- Deploy API products more easily!
