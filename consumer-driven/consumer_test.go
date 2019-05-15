@@ -90,22 +90,24 @@ func TestConsumer(t *testing.T) {
     return err
   }
 
-  // Set up expected interactions
+  // Contract will be GET with parts of speech and number of instances needed
   pact.
     AddInteraction().
     Given("Parts of speech for Agile Manifesto's first sentence exist").
     UponReceiving("A request to get words").
     WithRequest(dsl.Request{
       Method:  "GET",
-      // Path:    dsl.String("/words"),
-      Body: map[string]string{
-        "adjective": "billy",
-        "noun": "",
-        "verb": "",
+      Path:    "/words",
+      Headers: map[string]string{"Content-Type": "application/json"},
+      Body: map[string]int{
+        "adjective": 1,
+        "noun": 1,
+        "verb": 1,
       },
     }).
     WillRespondWith(dsl.Response{
       Status:  200,
+      Headers: map[string]string{"Content-Type": "application/json"},
       Body:    dsl.Match(&ResponseWords{}),
     })
 
