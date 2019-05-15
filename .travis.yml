@@ -17,7 +17,6 @@ install:
   - go get gopkg.in/tomb.v2
 
 before_script:
-  - golint  ./...
   - go vet ./...
 
 script:
