@@ -5,7 +5,8 @@
 [![Apache 2 license](https://img.shields.io/badge/License-Apache2-blue.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/aclairefication/gomad.svg?branch=master)](https://travis-ci.org/aclairefication/gomad)
 [![codecov](https://codecov.io/gh/aclairefication/gomad/branch/master/graph/badge.svg)](https://codecov.io/gh/aclairefication/gomad)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b76d480e02f4d1e8a8cc4f2b25b3874)](https://www.codacy.com/app/aclairefication/gomad?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aclairefication/gomad&amp;utm_campaign=Badge_Grade)
+[![Codacy](https://api.codacy.com/project/badge/Grade/6b76d480e02f4d1e8a8cc4f2b25b3874)](https://www.codacy.com/app/aclairefication/gomad?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aclairefication/gomad&amp;utm_campaign=Badge_Grade)
+[![Coveralls](https://coveralls.io/repos/github/aclairefication/gomad/badge.svg?branch=master)](https://coveralls.io/github/aclairefication/gomad?branch=master)
 
 Go Mad! is a project explaining the different types of contract testing.
 
