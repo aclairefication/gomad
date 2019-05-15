@@ -32,26 +32,26 @@ func TestHttpGetRequestForWordBlanks(t *testing.T) {
 	sampleAdjectives := "[\"vociferous\",\"chatty\",\"rigorous\",\"scraggly\",\"strategic\",\"hurried\"]"
 	sampleResponse := "{\"noun\":[" + sampleNouns + ", \"verb_present\":[" + samplePresentVerbs + ", \"verb\":" + sampleVerbs + ", \"adjective\":" + sampleAdjectives + "}"
 
-	targetUrl := "https://www.wordblanks.com/scripts/wb_ajax.php?token=" + token + "&method=getRandomWordSet&posArray%5B%5D=noun&posArray%5B%5D=verb_present&posArray%5B%5D=verb&posArray%5B%5D=adjective"
+	targetURL := "https://www.wordblanks.com/scripts/wb_ajax.php?token=" + token + "&method=getRandomWordSet&posArray%5B%5D=noun&posArray%5B%5D=verb_present&posArray%5B%5D=verb&posArray%5B%5D=adjective"
 
 	handler := func(writer http.ResponseWriter, request *http.Request) {
 		io.WriteString(writer, sampleResponse)
 	}
 
 	//Mock response
-	request := httptest.NewRequest("GET", targetUrl, nil)
+	request := httptest.NewRequest("GET", targetURL, nil)
 	writer := httptest.NewRecorder()
 	handler(writer, request)
 
 	response := writer.Result()
 	body, _ := ioutil.ReadAll(response.Body)
-	body_s := string(body)
-	fmt.Println(body_s)
+	bodyS := string(body)
+	fmt.Println(bodyS)
 	if 200 != response.StatusCode {
 		t.Fatal("Status code is " + string(response.StatusCode) + " not 200 OK.")
 	}
-	if body_s != sampleResponse {
-		t.Fatal("Body content is not expected: " + body_s )
+	if bodyS != sampleResponse {
+		t.Fatal("Body content is not expected: " + bodyS )
 	}
 
 }
