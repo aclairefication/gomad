@@ -49,3 +49,8 @@ To run against MadLib-like APIs
 ```
 go run gomad.go wordblanks.go
 ```
+
+To run go tests
+```
+go test -v ./...
+```
