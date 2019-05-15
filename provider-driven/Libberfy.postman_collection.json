@@ -6,7 +6,26 @@
 	},
 	"item": [
 		{
-			"name": "No blanks",
+			"name": "Just phrase",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "48655443-1252-4b55-a5c0-95a918985f85",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"<\");",
+							"    pm.expect(pm.response.text()).to.include(\">\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -181,6 +200,25 @@
 		},
 		{
 			"name": "With blanks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "14d12f2d-8e47-49ea-98d0-36012b0a8a25",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"<\");",
+							"    pm.expect(pm.response.text()).to.include(\">\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -266,7 +304,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "116"
+							"value": "102"
 						},
 						{
 							"key": "X-Content-Type-Options",
@@ -278,7 +316,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 15 May 2019 02:48:45 GMT"
+							"value": "Wed, 15 May 2019 03:11:51 GMT"
 						},
 						{
 							"key": "Via",
@@ -286,12 +324,31 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"madlib\": \"We are uncovering better ways of <verb_ending_with_ing> software by doing it and helping others do it .\"\n}"
+					"body": "{\n    \"madlib\": \"We are uncovering better ways of developing <noun> by doing it and helping others do it .\"\n}"
 				}
 			]
 		},
 		{
 			"name": "With HTML form",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a6ed0be9-b91c-460d-a0fd-a21fed937954",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"<form id='madlib-form'>\");",
+							"    pm.expect(pm.response.text()).to.include(\"</form>\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -403,6 +460,29 @@
 		},
 		{
 			"name": "With blanks & HTML form",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "595a60c4-a3b5-465a-910d-bbd312faedab",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"<form id='madlib-form'>\");",
+							"    pm.expect(pm.response.text()).to.include(\"</form>\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"<input type='text' placeholder='\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
