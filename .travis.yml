@@ -15,7 +15,6 @@ before_install:
 install:
   - go get gopkg.in/check.v1
   - go get gopkg.in/tomb.v2
-  - go get github.com/golang/lint
 
 before_script:
   - golint  ./...
