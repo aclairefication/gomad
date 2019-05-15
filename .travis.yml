@@ -17,4 +17,4 @@ script:
   - newman run ./provider-driven/Libberfy.postman_collection.json
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)  
+  - bash < (curl -s https://codecov.io/bash)  
