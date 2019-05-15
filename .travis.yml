@@ -8,7 +8,8 @@ env:
     - GO111MODULE=on
 
 before_install:
-  - sudo apt install nodejs npm
+  - sudo apt-get update
+  - sudo apt-get install nodejs npm
   - npm install -g newman
 
 script:
