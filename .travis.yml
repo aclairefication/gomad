@@ -7,5 +7,10 @@ env:
   global:
     - GO111MODULE=on
 
+before_install:
+  - sudo apt install nodejs npm
+  - npm install -g newman
+
 script:
   - go test -v ./...
+  - newman run ./provider-driven/Libberfy.postman_collection.json
