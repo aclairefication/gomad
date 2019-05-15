@@ -45,9 +45,13 @@ func TestHttpGetRequestForWordBlanks(t *testing.T) {
 
 	response := writer.Result()
 	body, _ := ioutil.ReadAll(response.Body)
-	fmt.Println(string(body))
+	body_s := string(body)
+	fmt.Println(body_s)
 	if 200 != response.StatusCode {
 		t.Fatal("Status code is " + string(response.StatusCode) + " not 200 OK.")
+	}
+	if body_s != sampleResponse {
+		t.Fatal("Body content is not expected: " + body_s )
 	}
 
 }
